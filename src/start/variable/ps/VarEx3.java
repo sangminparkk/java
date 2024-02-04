@@ -1,4 +1,4 @@
-package variable.ps;
+package start.variable.ps;
 
 public class VarEx3 {
     public static void main(String[] args) {

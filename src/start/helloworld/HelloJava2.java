@@ -1,4 +1,4 @@
-package helloworld;
+package start.helloworld;
 
 public class HelloJava2 {
 
