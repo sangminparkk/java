@@ -14,7 +14,6 @@ public class While2_3 {
             System.out.println(i+ "번째 더한 수는 : " + sum);
             i++;
         }
-
-
     }
+
 }
