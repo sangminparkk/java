@@ -4,32 +4,40 @@ import java.util.Scanner;
 
 public class ArrayEx3 {
     public static void main(String[] args) {
-        // 2차원 배열
+        /**
+         * 2차원 배열
+         * 4명의 학생
+         * row - 학생
+         * column - 점수
+         *
+         * 학생 1 | 국어 | 영어 | 수학
+         * 학생 2 | 국어 | 영어 | 수학
+         * 학생 3 | 국어 | 영어 | 수학
+         * 학생 4 | 국어 | 영어 | 수학
+         */
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("입력받을 숫자의 개수를 입력하세요: ");
-        int count = scanner.nextInt();
+        int[][] arr = new int[4][3];
+        String[] subjects = {"국어", "영어", "수학"};
 
-        int[] numbers = new int[count];
-        int minNumber, maxNumber;
-
-        System.out.println(count + "개의 정수를 입력하세요: ");
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = scanner.nextInt();
-        }
-
-        // 리팩토링
-        minNumber = maxNumber = numbers[0];
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] < minNumber) {
-                minNumber = numbers[i];
-            }
-            if (numbers[i] > maxNumber) {
-                maxNumber = numbers[i];
+        // 배열 생성
+        for (int i = 0; i <= arr.length-1; i++) {
+            System.out.println((i + 1) + "번 학생의 성적을 입력하세요: ");
+            for (int j = 0; j <= arr[i].length-1; j++) {
+                System.out.print(subjects[j] + " 점수: ");
+                arr[i][j] = scanner.nextInt();
             }
         }
 
-        System.out.println("가장 작은 수 = " + minNumber);
-        System.out.println("가장 큰 수 = " + maxNumber);
+        // 합계 출력
+        for (int i = 0; i <= arr.length-1; i++) {
+            int sum = 0;
+            double average;
+            for (int j = 0; j <= arr[i].length-1; j++) {
+                sum += arr[i][j];
+            }
+            average = (double) sum / 3;
+            System.out.println((i+1) + "번 학생 총점 : " + sum + ", 평균: " + average);
+        }
     }
 }
